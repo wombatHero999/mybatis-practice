@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"file:///C:/dev/mybatis-3-config.dtd"> 
+<configuration>
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true"/> 
+	</settings>
+	
+	<!-- 
+		이전 실습 파일을 참고하여 필요한 속성들을 등록. 
+		1. properties를 활용하여 환경변수 등록
+		2. typeAliases를 추가하여 별칭부여
+		3. environment추가하여 db연동
+		4. mappers를 추가하여 Mapper파일 등록
+	 -->
+
+</configuration>

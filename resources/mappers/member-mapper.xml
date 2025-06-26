@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "file:///C:/dev/mybatis-3-mapper.dtd">
+<mapper namespace="member">
+	<!-- 1번 문제.  -->
+	<select id="selectAllMember" resultType="member">
+		SELECT * FROM MEMBER
+	</select>
+	
+	<!-- 2번 문제. 회원 조회
+		- 사용자가 입력한 id와 일치하는 회원을 조회하는 sql문 작성.
+		- 조회할 칼럼은 USER_NO, USER_ID, USER_PWD, USER_NAME, Email 조회
+		- 조회결과 ResultSet을 자동으로 meber객체로 변환해 주는 resultMap생성	
+		- resultMap의 id는 자율적으로 작성       
+		- parameterType은 자율적으로 작성	
+	 -->
+	<select id="selectMemberById">
+		
+	</select>	
+	<!-- 2번 문제. 회원 추가 
+		- 사용자가 입력한 데이터를 바탕으로 Member테이블에 데이터를 추가
+		- user_no는 시퀀스 자동증가값, 회원가입일을 default값을 활용할것.
+		- parameterType은 자율적으로 작성		
+	-->
+	<insert id="insertMember">
+	
+	</insert>
+	
+	<!-- 4번 문제. 회원이 이름 기준 검색
+		- 사용자가 입력한 이름이 포함된 회원들을 검색
+		- 조회할 칼럼은 USER_NO, USER_ID, USER_PWD, USER_NAME, Email
+		- 조회결과 ResultSet을 자동으로 meber객체로 변환해 주는 resultMap생성
+		- resltMap의 id는 자율적으로 작성
+		- 단, resultMap의 constructor를 사용하여 생성자 방식으로 초기화 시킬 것.
+		- parameterType은 자율적으로 작성		
+	-->
+	<select id="selectMemberByName">
+		
+	</select>	
+	
+	
+	
+	
+</mapper>
