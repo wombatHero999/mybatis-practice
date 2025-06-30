@@ -18,7 +18,7 @@
 	<select id="selectMemberById">
 		
 	</select>	
-	<!-- 2번 문제. 회원 추가 
+	<!-- 3 문제. 회원 추가 
 		- 사용자가 입력한 데이터를 바탕으로 Member테이블에 데이터를 추가
 		- user_no는 시퀀스 자동증가값, 회원가입일을 default값을 활용할것.
 		- parameterType은 자율적으로 작성		

@@ -1,18 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration
 	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
-	"file:///C:/dev/mybatis-3-config.dtd"> 
+	"file:///C:/dev/mybatis-3-config.dtd">
 <configuration>
+	<properties resource="driver.properties">
+	</properties>
+
 	<settings>
-		<setting name="mapUnderscoreToCamelCase" value="true"/> 
+		<setting name="mapUnderscoreToCamelCase" value="true" />
 	</settings>
 	
-	<!-- 
-		이전 실습 파일을 참고하여 필요한 속성들을 등록. 
-		1. properties를 활용하여 환경변수 등록
-		2. typeAliases를 추가하여 별칭부여
-		3. environment추가하여 db연동
-		4. mappers를 추가하여 Mapper파일 등록
-	 -->
+	<typeAliases>
+		<typeAlias type="com.kh.practice.model.vo.Board" alias="board" />
+		<typeAlias type="com.kh.practice.model.vo.Member" alias="member" />
+		<typeAlias type="com.kh.practice.model.vo.Reply" alias="reply" />
+	</typeAliases>
+
+	<!-- 이전 실습 파일을 참고하여 필요한 속성들을 등록. 1. properties를 활용하여 환경변수 등록 2. typeAliases를 
+		추가하여 별칭부여 3. environment추가하여 db연동 4. mappers를 추가하여 Mapper파일 등록 -->
+
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<mappers>
+		<mapper resource="/mappers/member-mapper.xml" />
+		<mapper resource="/mappers/board-mapper.xml" />
+	</mappers>
+
+
+
+
+
 
 </configuration>
