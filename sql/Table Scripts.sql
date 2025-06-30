@@ -80,28 +80,28 @@ INSERT INTO BOARD
 VALUES(SEQ_BNO.NEXTVAL, '페이징처리때문에 샘플데이터 많이 넣어놓는다..', '중요하겠죠?', 2, '20200324', DEFAULT);
 
 INSERT INTO BOARD
-VALUES(SEQ_BNO.NEXTVAL, '어서오세요ㅎㅎ', '반갑습니다.', 1, DEFAULT, '20200325', DEFAULT);
+VALUES(SEQ_BNO.NEXTVAL, '어서오세요ㅎㅎ', '반갑습니다.', 1, '20200325', DEFAULT);
 
 INSERT INTO BOARD
-VALUES(SEQ_BNO.NEXTVAL, '모두들 화이팅!!', '화이팅 합시다~', 2, DEFAULT, '20200326', DEFAULT);
+VALUES(SEQ_BNO.NEXTVAL, '모두들 화이팅!!', '화이팅 합시다~', 2, '20200326', DEFAULT);
 
 INSERT INTO BOARD
-VALUES(SEQ_BNO.NEXTVAL, '게시판 서비스', '안녕하세요. 게시판입니다.', 1, DEFAULT, '20200327', DEFAULT);
+VALUES(SEQ_BNO.NEXTVAL, '게시판 서비스', '안녕하세요. 게시판입니다.', 1, '20200327', DEFAULT);
 
 INSERT INTO BOARD
-VALUES(SEQ_BNO.NEXTVAL, '안녕하십니까', '맛점하십시오', 2, DEFAULT, '20200328', DEFAULT);
+VALUES(SEQ_BNO.NEXTVAL, '안녕하십니까', '맛점하십시오', 2, '20200328', DEFAULT);
 
 INSERT INTO BOARD
-VALUES(SEQ_BNO.NEXTVAL, '힘냅시다!', '종강까지 얼마 안남았네요!', 1, DEFAULT, '20200329', DEFAULT);
+VALUES(SEQ_BNO.NEXTVAL, '힘냅시다!', '종강까지 얼마 안남았네요!', 1, '20200329', DEFAULT);
 
 INSERT INTO BOARD
-VALUES(SEQ_BNO.NEXTVAL, '테스트 게시글 입니다.', '잘 보이시나요?', 2, DEFAULT, '20200330', DEFAULT);
+VALUES(SEQ_BNO.NEXTVAL, '테스트 게시글 입니다.', '잘 보이시나요?', 2, '20200330', DEFAULT);
 
 INSERT INTO BOARD
-VALUES(SEQ_BNO.NEXTVAL, '드디어 프레임워크..', '아기다리 고기다렸 읍니다..', 2, DEFAULT, '20200402', DEFAULT);
+VALUES(SEQ_BNO.NEXTVAL, '드디어 프레임워크..', '아기다리 고기다렸 읍니다..', 2, '20200402', DEFAULT);
 
 INSERT INTO BOARD
-VALUES(SEQ_BNO.NEXTVAL, '어 예쁘다', '컹핑항장할래용', 1, DEFAULT, '20200403', DEFAULT);
+VALUES(SEQ_BNO.NEXTVAL, '어 예쁘다', '컹핑항장할래용', 1, '20200403', DEFAULT);
 
 ----------------------------------------------------
 -------------------- REPLY 관련 ---------------------	
