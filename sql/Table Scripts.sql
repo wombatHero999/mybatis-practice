@@ -95,13 +95,13 @@ INSERT INTO BOARD
 VALUES(SEQ_BNO.NEXTVAL, '힘냅시다!', '종강까지 얼마 안남았네요!', 1,  '20200329', DEFAULT);
 
 INSERT INTO BOARD
-VALUES(SEQ_BNO.NEXTVAL, '테스트 게시글 입니다.', '잘 보이시나요?', 2,  '20200330', DEFAULT);
+VALUES(SEQ_BNO.NEXTVAL, '테스트 게시글 입니다.', '잘 보이시나요?', 2, '20200330', DEFAULT);
 
 INSERT INTO BOARD
 VALUES(SEQ_BNO.NEXTVAL, '드디어 프레임워크..', '아기다리 고기다렸 읍니다..', 2,  '20200402', DEFAULT);
 
 INSERT INTO BOARD
-VALUES(SEQ_BNO.NEXTVAL, '어 예쁘다', '컹핑항장할래용', 1,  '20200403', DEFAULT);
+VALUES(SEQ_BNO.NEXTVAL, '어 예쁘다', '컹핑항장할래용', 1, '20200403', DEFAULT);
 
 ----------------------------------------------------
 -------------------- REPLY 관련 ---------------------	
