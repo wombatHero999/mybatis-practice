@@ -92,7 +92,7 @@ body {
 					// 댓글 출력
 					if (data.replyList && data.replyList.length > 0) {
 						html += "<h6>댓글 목록</h6><ul>";
-						data.replies.forEach(function(reply) {
+						data.replyList.forEach(function(reply) {
 							html += `<li><strong>\${reply.userName}:</strong> \${reply.replyContent} <small>(\${reply.createDate})</small></li>`;
 						});
 						html += "</ul>";

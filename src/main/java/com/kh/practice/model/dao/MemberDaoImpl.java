@@ -15,8 +15,7 @@ public class MemberDaoImpl implements MemberDao {
 
 	@Override
 	public Member selectMemberById(SqlSession session, String userId) {
-		// TODO Auto-generated method stub
-		return null;
+		return session.selectOne("member.selectMemberById" , userId);
 	}
 
 	@Override

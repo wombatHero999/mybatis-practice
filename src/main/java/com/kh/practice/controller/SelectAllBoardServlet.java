@@ -1,11 +1,16 @@
 package com.kh.practice.controller;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.kh.practice.model.service.BoardServiceImpl;
+import com.kh.practice.model.vo.Board;
 
 /**
  * Servlet implementation class SelectAllBoardServlet
@@ -28,8 +33,8 @@ public class SelectAllBoardServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		// 전체 게시글 목록 조회 후 request scope에 저장.
-		
-		
+		List<Board> list = new BoardServiceImpl().selectAllBoard();	
+		request.setAttribute("list", list);
 		
 		request.getRequestDispatcher("/index2.jsp").forward(request, response);
 	}

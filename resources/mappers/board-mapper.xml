@@ -11,8 +11,19 @@
 	 - resultMap의 id는 자율적으로 작성       
 	 - parameterType은 자율적으로 작성
 	-->
-	<select id="selectAllBoard">
+	<resultMap type="board" id="boardResultMap1">	
+		<id column="BOARD_NO" property="boardNo" />
+		<result column="BOARD_TITLE" property="boardTitle" />
+		<result column="USER_NAME" property="userName"
+		 javaType="String" jdbcType="VARCHAR" />
+		<result column="CREATE_DATE" property="createDate" />
+	</resultMap>
 	
+	<select id="selectAllBoard" resultMap="boardResultMap1" >
+		SELECT BOARD_NO, BOARD_TITLE, USER_NAME, CREATE_DATE
+		FROM BOARD
+		LEFT JOIN MEMBER USING(USER_NO)
+		ORDER BY 1 DESC
 	</select>
 	
 	<!-- 2번문제. 게시글 상세 조회(Board + Reply)
@@ -22,8 +33,30 @@
 	    - 조회결과는 resultMap을 활용하며, resultMap의 id는 자율적으로 작성
 		- 댓글목록은의 collection태그를 사용하여 replyList필드에 매핑할것	
 	 -->
-	<select id="selectBoardByNo">
-	
+	 <resultMap type="board" id="boardResultMap2">
+	 	<id column="BOARD_NO" property="boardNo" />
+	 	<result column="BOARD_TITLE" property="boardTitle" />
+	 	<result column="BOARD_WRITER" property="userName" /> 
+	 	<collection property="replyList" resultMap="replyResultMap" />
+	 </resultMap> 
+	 
+	 <resultMap id="replyResultMap" type="reply">
+	 	<result column="REPLY_CONTENT" property="replyContent"/>
+	 	<result column="REPLY_WRITER" property="userName" />
+	 	<result column="CREATE_DATE" property="createDate" />
+	 </resultMap>
+	 
+	<select id="selectBoardByNo" parameterType="int" resultMap="boardResultMap2">
+		SELECT BOARD_NO, BOARD_TITLE, 
+		M1.USER_NAME as BOARD_WRITER
+		, REPLY_CONTENT
+		, M2.USER_NAME AS REPLY_WRITER
+		, R.CREATE_DATE
+		FROM BOARD B
+		LEFT JOIN MEMBER M1 USING(USER_NO)
+		LEFT JOIN REPLY R USING(BOARD_NO)
+		LEFT JOIN MEMBER M2 ON R.USER_NO = M2.USER_NO
+		WHERE BOARD_NO = #{boardNo}
 	</select>
 	
 	<!-- 3번 문제. 게시글 검색
@@ -31,8 +64,33 @@
 	  - if태그를 사용하여 사용자가 선택한 검색조건에 맞춰 동적인 쿼리문이 완성되도록 한다
 	  - 조회할 칼럼에 대한 조건은 1번과 동일.
 	 -->
-	<select id="searchBoard">
-	
+	<select id="searchBoard" parameterType="map" resultMap="boardResultMap1">
+		SELECT 
+			BOARD_NO, BOARD_TITLE, USER_NAME, CREATE_DATE
+		FROM BOARD
+		JOIN MEMBER USING(USER_NO)
+		<where>
+			<if test="searchKey eq 'userName'">
+				USER_NAME LIKE '%' || #{searchValue} || '%'
+			</if>
+			<if test="searchKey eq 'content'">			
+				BOARD_CONTENT LIKE '%' || #{searchValue} || '%'
+			</if>
+			<if test="searchKey eq 'title'">
+				BOARD_TITLE LIKE '%' || #{searchValue} || '%'
+			</if>			
+		</where>	
 	</select>
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 </mapper>
+
